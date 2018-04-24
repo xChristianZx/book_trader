@@ -2,10 +2,27 @@
   "name": "book_trader",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "9.5.0"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "client": "npm run start --prefix client",
+    "server": "nodemon index.js",
+    "dev":
+      "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild":
+      "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1"
+  }
 }
