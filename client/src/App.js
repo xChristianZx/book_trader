@@ -1,19 +1,21 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import styles from "./App.css";
+// import styles from "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+const Landing = () => <div>Landing Page</div>;
+const Books = () => <div>List of Books page</div>;
+const User = () => <div>User Page</div>;
 
 class App extends Component {
   render() {
     return (
-      <div className={styles.App}>
-        <header className={styles.header}>
-          <img src={logo} className={styles.logo} alt="logo" />
-          <h1 className={styles.title}>Welcome to React</h1>
-        </header>
-        <p className={styles.intro}>
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <div>
+          <Route exact path="/" component={Landing} />
+          <Route path="/books" component={Books} />
+          <Route path="/user" component={User} />
+        </div>
+      </Router>
     );
   }
 }
