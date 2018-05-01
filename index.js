@@ -15,7 +15,7 @@ mongoose.connect(keys.mongoURI);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static("views"));
+// app.use(express.static("views"));
 app.set("view engine", "ejs");
 
 // Seed mLabDB
