@@ -1,25 +1,27 @@
 import React, { Component } from "react";
+import styles from "./Books.css";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { fetchBooks } from "../../actions/index";
+import BookItem from "../../components/BookItem/BookItem";
 
 class Books extends Component {
   componentDidMount() {
     this.props.fetchBooks();
   }
   renderList = () => {
-    const { data } = this.props.api;
-    if (data === null) {
-      return;
+    const { isFetching, data } = this.props.api;
+    if (isFetching || data === null) {
+      return <div>Loading...</div>;
     }
     const books = data.map(book => {
-      return <li>{book.name}</li>;
+      return <BookItem data={book} />;
     });
-    return <ul>{books}</ul>;
+    return <ul className={styles.list_container}>{books}</ul>;
   };
 
   render() {
-    return <div>{this.renderList()}</div>;
+    return <div className={styles.list_wrapper}>{this.renderList()}</div>;
   }
 }
 

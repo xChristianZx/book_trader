@@ -1,0 +1,14 @@
+.card_container {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1rem;
+  margin: 1rem;
+  width: 20vw;
+  background: white; }
+
+.image_container {
+  text-align: center; }
+  .image_container img {
+    width: 176px;
+    height: auto;
+    max-height: 263px; }
