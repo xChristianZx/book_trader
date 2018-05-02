@@ -3,9 +3,9 @@ import styles from "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from "./containers/NavBar/NavBar";
 import Books from "./containers/Books/Books";
+import User from "./containers/User/User";
 
 const Landing = () => <div>Landing Page</div>;
-const User = () => <div>User Page</div>;
 
 class App extends Component {
   render() {
