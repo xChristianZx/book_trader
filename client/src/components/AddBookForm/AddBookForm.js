@@ -26,6 +26,7 @@ class AddBookForm extends Component {
     }
     console.log("addbook", newBook);
     this.props.addBook(newBook);
+    this.setState({ title: "", author: "", coverImageURL: "" });
   };
 
   render() {

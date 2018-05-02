@@ -24,9 +24,7 @@ export const addBook = newBook => async dispatch => {
   try {
     const res = await Axios.post("books/add", newBook);
     dispatch({ type: ADD_BOOK_SUCCESS, payload: res.data });
-    console.log("SUCCESS", res);
   } catch (err) {
     dispatch({ type: ADD_BOOK_FAIL, error: err });
-    console.log("ERROR", err);
   }
 };
