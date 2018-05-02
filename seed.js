@@ -6,34 +6,34 @@ const books = [
     title: "Catch-22",
     author: "Joseph Heller",
     bookOwner: null,
-    imageCover:
+    coverImageURL:
       "https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Catch22.jpg/220px-Catch22.jpg"
   },
   {
     title: "The Grapes of Wrath",
     author: "John Steinbeck",
     bookOwner: null,
-    imageCover:
+    coverImageURL:
       "https://upload.wikimedia.org/wikipedia/en/thumb/1/1f/JohnSteinbeck_TheGrapesOfWrath.jpg/200px-JohnSteinbeck_TheGrapesOfWrath.jpg"
   },
   {
     title: "The Catcher in the Rye",
     author: "J.D. Salinger",
     bookOwner: null,
-    imageCover:
+    coverImageURL:
       "https://images-na.ssl-images-amazon.com/images/I/81OthjkJBuL.jpg"
   },
   {
     title: "The Great Gatsby",
     author: "F. Scott Fitzgerald",
     bookOwner: null,
-    imageCover: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/TheGreatGatsby_1925jacket.jpeg/220px-TheGreatGatsby_1925jacket.jpeg"
+    coverImageURL: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/TheGreatGatsby_1925jacket.jpeg/220px-TheGreatGatsby_1925jacket.jpeg"
   },
   {
     title: "1984",
     author: "George Orwell",
     bookOwner: null,
-    imageCover: "https://images-na.ssl-images-amazon.com/images/I/514CVwOrybL.jpg"
+    coverImageURL: "https://images-na.ssl-images-amazon.com/images/I/514CVwOrybL.jpg"
   }
 ];
 

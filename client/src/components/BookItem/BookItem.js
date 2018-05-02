@@ -2,11 +2,11 @@ import React from "react";
 import styles from "./BookItem.css";
 
 const BookItem = ({ data }) => {
-  const { title, author, imageCover } = data;
+  const { title, author, coverImageURL } = data;
   return (
     <li className={styles.card_container}>
       <div className={styles.image_container}>
-        <img src={imageCover} alt="Book Cover" />
+        <img src={coverImageURL} alt="Book Cover" />
       </div>
       <div>{title}</div>
       <div>{author}</div>
