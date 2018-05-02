@@ -15,7 +15,7 @@ class Books extends Component {
       return <div>Loading...</div>;
     }
     const books = data.map(book => {
-      return <BookItem data={book} />;
+      return <BookItem data={book} key={book._id} />;
     });
     return <ul className={styles.list_container}>{books}</ul>;
   };
