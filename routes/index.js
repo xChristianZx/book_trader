@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Book = require("../models/Book");
-const chalk = require('chalk');
+const chalk = require("chalk");
 
 module.exports = app => {
   // === Get all books === //
@@ -25,7 +25,7 @@ module.exports = app => {
         res.send(chalk.cyan(`${newBook.title} has been added`));
       }
     });
-    // Save for testing
+    // Save for testing without adding Book
     // res.send(`${newBook.title} has been added`);
   });
 };

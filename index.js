@@ -14,8 +14,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(require("./services/passport"));
 
-// app.use(express.static("views")); 
-// app.set("view engine", "ejs"); 
+// app.use(express.static("views"));
+// app.set("view engine", "ejs");
 
 // Seed mLabDB
 // seedDB();

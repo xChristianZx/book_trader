@@ -5,7 +5,8 @@ const UserSchema = new Schema({
   id: String,
   name: String,
   nickname: String,
-  userPhoto: String
+  userPhoto: String,
+  booksOwned: [{ type: mongoose.Schema.Types.ObjectId, ref: "Book" }]
 });
 
 module.exports = mongoose.model("User", UserSchema);
