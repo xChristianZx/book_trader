@@ -6,6 +6,7 @@ const UserSchema = new Schema({
   name: String,
   nickname: String,
   userPhoto: String,
+  email: String,
   booksOwned: [{ type: mongoose.Schema.Types.ObjectId, ref: "Book" }]
 });
 

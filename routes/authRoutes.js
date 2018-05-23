@@ -18,12 +18,13 @@ module.exports = app => {
       console.log("REQ.USER", req.user);
 
       // === authO User info ===//
-      const { sub, name, nickname, picture } = req.user._json;
+      const { sub, name, nickname, picture, email } = req.user._json;
 
       const newUser = {
         id: sub,
         name,
         nickname,
+        email,
         userPhoto: picture
       };
 

@@ -11,7 +11,7 @@ const strategy = new Auth0Strategy(
     clientID: keys.auth0ClientID,
     clientSecret: keys.auth0ClientSecret,
     callbackURL: "/login/callback",
-    scope: "openid profile"
+    scope: "openid profile email"
   },
   (accessToken, refreshToken, extraParams, profile, done) => {
     // accessToken is the token to call Auth0 API (not needed in the most cases)
