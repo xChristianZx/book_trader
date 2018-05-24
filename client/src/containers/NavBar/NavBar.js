@@ -1,31 +1,58 @@
 import React, { Component } from "react";
 import styles from "./NavBar.css";
 import { Link } from "react-router-dom";
-import { fetchUser, userLogout } from "../../actions/index";
+import { userLogout } from "../../actions/index";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 class NavBar extends Component {
+  renderNavLinks = () => {
+    const { isLoggedIn, userInfo } = this.props.auth;
+    switch (isLoggedIn) {
+      case true:
+        return [
+          <li key="1">
+            <p>Welcome {userInfo.name}</p>
+          </li>,
+          <li key="2">
+            <Link to="/user">User</Link>
+          </li>,
+          <li key="3">
+            <p onClick={this.props.userLogout}>Logout</p>
+          </li>
+        ];
+      default:
+        return [
+          <li key="4">
+            <a href="http://localhost:5000/login">Login/ Register</a>
+          </li>
+        ];
+    }
+  };
+
   render() {
     return (
       <header className={styles.wrapper}>
         <div className={styles.container}>
           <div>
-            <Link to="/">Home</Link>
+            <Link to="/">JungleBooks</Link>
           </div>
-          <div>
+          <div className={styles.navlinks} >
             <Link to="/books">Books</Link>
-            <Link to="/user">User</Link>            
-            <a href="http://localhost:5000/login">Login</a>
-            <button onClick={this.props.userLogout}>Logout</button>
+            <ul>{this.renderNavLinks()}</ul>
           </div>
         </div>
       </header>
     );
   }
 }
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchUser, userLogout }, dispatch);
+
+function mapStateToProps({ auth }) {
+  return { auth };
 }
 
-export default connect(null, mapDispatchToProps)(NavBar);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ userLogout }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

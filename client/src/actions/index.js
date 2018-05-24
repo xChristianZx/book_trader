@@ -50,7 +50,8 @@ export const fetchUser = () => async dispatch => {
 export const userLogout = () => async dispatch => {
   dispatch({ type: LOGOUT_USER_REQUEST });
   try {
-    const res = await Axios.get("/logout");
+    await Axios.get("/logout");
+    // const res = await Axios.get("/logout");
     // console.log("LOGOUT_USER_SUCCESS", res);
     dispatch({ type: LOGOUT_USER_SUCCESS });
   } catch (error) {
