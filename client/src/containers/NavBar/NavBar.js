@@ -16,7 +16,6 @@ class NavBar extends Component {
           <div>
             <Link to="/books">Books</Link>
             <Link to="/user">User</Link>
-            <button onClick={this.props.fetchUser}>CHECKAUTH</button>
             {/* SHAV  - how do I do this using Redux???  */}
             <a href="http://localhost:5000/login">Login</a>
 
