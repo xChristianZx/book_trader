@@ -7,7 +7,9 @@ const UserSchema = new Schema({
   nickname: String,
   userPhoto: String,
   email: String,
-  booksOwned: [{ type: mongoose.Schema.Types.ObjectId, ref: "Book" }]
+  booksOwned: [{ type: mongoose.Schema.Types.ObjectId, ref: "Book" }],
+  /* Temp model for trades - Contains bookOwner and title */
+  requestedTrades: [{ type: mongoose.Schema.Types.ObjectId, ref: "Book" }]
 });
 
 module.exports = mongoose.model("User", UserSchema);

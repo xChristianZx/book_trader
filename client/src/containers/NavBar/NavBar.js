@@ -15,10 +15,8 @@ class NavBar extends Component {
           </div>
           <div>
             <Link to="/books">Books</Link>
-            <Link to="/user">User</Link>
-            {/* SHAV  - how do I do this using Redux???  */}
+            <Link to="/user">User</Link>            
             <a href="http://localhost:5000/login">Login</a>
-
             <button onClick={this.props.userLogout}>Logout</button>
           </div>
         </div>
