@@ -1,6 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import styles from "./NavBar.css";
+import { Link } from "react-router-dom";
+import { fetchUser, userLogout } from "../../actions/index";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
 class NavBar extends Component {
   render() {
@@ -10,15 +13,22 @@ class NavBar extends Component {
           <div>
             <Link to="/">Home</Link>
           </div>
-
           <div>
             <Link to="/books">Books</Link>
             <Link to="/user">User</Link>
+            <button onClick={this.props.fetchUser}>CHECKAUTH</button>
+            {/* SHAV  - how do I do this using Redux???  */}
+            <a href="http://localhost:5000/login">Login</a>
+
+            <button onClick={this.props.userLogout}>Logout</button>
           </div>
         </div>
       </header>
     );
   }
 }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchUser, userLogout }, dispatch);
+}
 
-export default NavBar;
+export default connect(null, mapDispatchToProps)(NavBar);

@@ -9,10 +9,12 @@ module.exports = app => {
   // === authO login callback === //
   app.get(
     "/login/callback",
-    passport.authenticate("auth0", { failureRedirect: "/login" }),
+    passport.authenticate("auth0", {
+      failureRedirect: "http://localhost:3000/"
+    }),
     function(req, res) {
       if (!req.user) {
-        throw new Error("user null");
+        throw new Error("user login error");
       }
       console.log("***************");
       console.log("REQ.USER", req.user);
@@ -29,6 +31,7 @@ module.exports = app => {
       };
 
       // === Add User or check if User exists === //
+      // return res.redirect("http://localhost:3000");
       User.findOne(
         {
           id: sub
@@ -42,14 +45,39 @@ module.exports = app => {
                 throw err;
               }
               console.log(chalk.cyan(`${user.name} has been added`));
-              return res.send(user);
+              // return res.send(user);
+              return res.redirect("http://localhost:3000");
             });
           } else {
             console.log(chalk.cyan("USER FOUND", user));
-            return res.send(user);
+            // return res.send(user);
+            return res.redirect("http://localhost:3000");
           }
         }
       );
     }
   );
+
+  // === CheckAuth === //
+  app.get("/checkAuth", (req, res) => {
+    if (!req.user) {
+      res.status(400).json({ error: "User not found" });
+    } else {
+      // console.log("USER FOUND2", req.user);
+      User.findOne({ id: req.user.id }, (err, user) => {
+        if (err) {
+          console.log(err);
+        }
+        // console.log("HERE I AM", user);
+        return res.status(200).send(user);
+      });
+    }
+  });
+
+  // === Logout === //
+  app.get("/logout", (req, res) => {
+    req.logOut();
+    // res.redirect("http://localhost:3000");
+    return res.status(200).send("HEYO");
+  });
 };
