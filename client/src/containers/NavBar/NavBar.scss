@@ -9,11 +9,12 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 60%;
-  margin: 1rem auto;
-  padding: 0.5rem;
+  flex-flow: row nowrap;
+  // justify-content: space-between;
+  // align-items: center;
+  width: 80%;
+  // margin: 1rem auto;
+  // padding: 0.5rem;
   & a {
     text-decoration: none;
     margin: 1rem auto;

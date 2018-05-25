@@ -8,11 +8,8 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 60%;
-  margin: 1rem auto;
-  padding: 0.5rem; }
+  flex-flow: row nowrap;
+  width: 80%; }
   .container a {
     text-decoration: none;
     margin: 1rem auto;
