@@ -9,10 +9,17 @@
 }
 
 .image_container {
-  text-align: center;
+  // text-align: center;
   & img {
-    width: 176px;
+    // max-width: 176px !important;
     height: auto;
     max-height: 263px;
+    object-fit: contain;
+    // margin: 0;
   }
 }
+
+// materialize override
+// .card .card-image img {
+//   width: 176px;
+// }

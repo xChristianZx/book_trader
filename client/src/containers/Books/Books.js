@@ -17,11 +17,13 @@ class Books extends Component {
     const books = data.map(book => {
       return <BookItem data={book} key={book._id} />;
     });
-    return <ul className={styles.list_container}>{books}</ul>;
+    // return <ul className={styles.list_container}>{books}</ul>;
+    return <ul className={"row"}>{books}</ul>;
   };
 
   render() {
-    return <div className={styles.list_wrapper}>{this.renderList()}</div>;
+    // return <div className={styles.list_wrapper}>{this.renderList()}</div>;
+    return <div className={"container"}>{this.renderList()}</div>;
   }
 }
 

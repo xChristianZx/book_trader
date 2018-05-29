@@ -8,7 +8,7 @@ import NavBar from "./containers/NavBar/NavBar";
 import Books from "./containers/Books/Books";
 import User from "./containers/User/User";
 
-const Landing = () => <div>Landing Page</div>;
+// const Landing = () => <div>Landing Page</div>;
 
 class App extends Component {
   componentDidMount() {
@@ -20,7 +20,7 @@ class App extends Component {
       <Router>
         <div className={styles.layout_wrapper}>
           <NavBar />
-          <Route exact path="/" component={Landing} />
+          <Route exact path="/" component={Books} />
           <Route path="/books" component={Books} />
           <Route exact path="/user" component={User} />
         </div>
