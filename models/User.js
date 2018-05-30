@@ -7,6 +7,8 @@ const UserSchema = new Schema({
   nickname: String,
   userPhoto: String,
   email: String,
+  city: String,
+  state: String,
   booksOwned: [{ type: mongoose.Schema.Types.ObjectId, ref: "Book" }],
   /* Temp model for trades - Contains bookOwner and title */
   requestedTrades: [{ type: mongoose.Schema.Types.ObjectId, ref: "Book" }]
