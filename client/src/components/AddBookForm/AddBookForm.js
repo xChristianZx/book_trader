@@ -20,11 +20,6 @@ class AddBookForm extends Component {
     e.preventDefault();
     const { title, author, coverImageURL } = this.state;
     const newBook = { title, author, coverImageURL };
-    // Temp error handling
-    if (title.length === 0 || author.length === 0) {
-      console.log("Cannot submit an empty string");
-      return;
-    }
     console.log("addbook", newBook);
     this.props.addBook(newBook);
     this.setState({ title: "", author: "", coverImageURL: "" });
@@ -45,6 +40,7 @@ class AddBookForm extends Component {
                   name="title"
                   onChange={this.handleChange}
                   value={this.state.title}
+                  required
                 />
                 <label>Title</label>
               </div>
@@ -57,6 +53,7 @@ class AddBookForm extends Component {
                   name="author"
                   onChange={this.handleChange}
                   value={this.state.author}
+                  required
                 />
               </div>
             </div>
