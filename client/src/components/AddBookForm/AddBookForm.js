@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import styles from "./AddBookForm.css";
+// import styles from "./AddBookForm.css";
 import { addBook } from "../../actions/index";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 class AddBookForm extends Component {
   state = {
@@ -31,34 +32,51 @@ class AddBookForm extends Component {
 
   render() {
     return (
-      <div className={styles.container}>
-        <form className={styles.form} onSubmit={this.handleSubmit}>
-          <label>Title:</label>
-          <input
-            type="text"
-            name="title"
-            placeholder="Title"
-            onChange={this.handleChange}
-            value={this.state.title}
-          />
-          <label>Author:</label>
-          <input
-            type="text"
-            name="author"
-            placeholder="Author"
-            onChange={this.handleChange}
-            value={this.state.author}
-          />
-          <label>Image of Book Cover:</label>
-          <input
-            type="text"
-            name="coverImageURL"
-            placeholder="Url to image of book cover"
-            onChange={this.handleChange}
-            value={this.state.coverImageURL}
-          />
-          <input type="submit" value="Add Book" />
-        </form>
+      <div className="container">
+        <div className="row">
+          <h4 className="teal-text text-darken-2 center">Add a Book</h4>
+        </div>
+        <div className="row">
+          <form className={"col s12"} onSubmit={this.handleSubmit}>
+            <div className="row">
+              <div className="input-field col s12">
+                <input
+                  type="text"
+                  name="title"
+                  onChange={this.handleChange}
+                  value={this.state.title}
+                />
+                <label>Title</label>
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field col s12">
+                <label>Author</label>
+                <input
+                  type="text"
+                  name="author"
+                  onChange={this.handleChange}
+                  value={this.state.author}
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="input-field col s12">
+                <label>URL to Book Cover Image</label>
+                <input
+                  type="text"
+                  name="coverImageURL"
+                  onChange={this.handleChange}
+                  value={this.state.coverImageURL}
+                />
+              </div>
+            </div>
+            <input className="btn right" type="submit" value="Add Book" />
+            <Link className="btn-flat right" to="books">
+              Back
+            </Link>
+          </form>
+        </div>
       </div>
     );
   }

@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import NavBar from "./containers/NavBar/NavBar";
 import Books from "./containers/Books/Books";
 import User from "./containers/User/User";
-
+import AddBook from "./components/AddBookForm/AddBookForm";
 // const Landing = () => <div>Landing Page</div>;
 
 class App extends Component {
@@ -22,6 +22,7 @@ class App extends Component {
           <NavBar />
           <Route exact path="/" component={Books} />
           <Route path="/books" component={Books} />
+          <Route path="/addbook" component={AddBook} />
           <Route exact path="/user" component={User} />
         </div>
       </Router>
