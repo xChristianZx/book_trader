@@ -12,7 +12,10 @@ import {
   LOGIN_USER_REQUEST,
   LOGOUT_USER_REQUEST,
   LOGOUT_USER_SUCCESS,
-  LOGOUT_USER_FAIL
+  LOGOUT_USER_FAIL,
+  UPDATE_USER_REQUEST,
+  UPDATE_USER_SUCCESS,
+  UPDATE_USER_FAIL
 } from "./types";
 
 export const fetchBooks = () => async dispatch => {
@@ -38,11 +41,9 @@ export const addBook = newBook => async dispatch => {
 export const fetchUser = () => async dispatch => {
   dispatch({ type: LOGIN_USER_REQUEST });
   try {
-    const res = await Axios.get("/checkAuth");
-    // console.log("LOGIN_USER_SUCCESS", res);
+    const res = await Axios.get("/checkauth");
     dispatch({ type: LOGIN_USER_SUCCESS, payload: res.data });
   } catch (error) {
-    // console.log("LOGIN_USER_ERROR", error);
     dispatch({ type: LOGIN_USER_FAIL, error });
   }
 };
@@ -51,11 +52,18 @@ export const userLogout = () => async dispatch => {
   dispatch({ type: LOGOUT_USER_REQUEST });
   try {
     await Axios.get("/logout");
-    // const res = await Axios.get("/logout");
-    // console.log("LOGOUT_USER_SUCCESS", res);
     dispatch({ type: LOGOUT_USER_SUCCESS });
   } catch (error) {
-    // console.log("LOGOUT_USER_FAIL", error);
     dispatch({ type: LOGOUT_USER_FAIL, error });
+  }
+};
+
+export const userUpdate = user => async dispatch => {
+  dispatch({ type: UPDATE_USER_REQUEST });
+  try {
+    const res = await Axios.post("/userupdate", user);
+    dispatch({ type: UPDATE_USER_SUCCESS, payload: res.data });
+  } catch (error) {
+    dispatch({ type: UPDATE_USER_FAIL, error });
   }
 };

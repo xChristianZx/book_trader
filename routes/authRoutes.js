@@ -58,8 +58,19 @@ module.exports = app => {
     }
   );
 
+  app.post("/userupdate", (req, res) => {
+    const { _id, name, city, state } = req.body;
+    const userUpdate = { name, city, state };
+    // Returns the new model instead of the old one upon update
+    const mOptions = { new: true };
+    User.findByIdAndUpdate(_id, userUpdate, mOptions, (err, user) => {
+      console.log(chalk.green("Updated User Info: ", user));
+      return res.send(user);
+    });
+  });
+
   // === CheckAuth === //
-  app.get("/checkAuth", (req, res) => {
+  app.get("/checkauth", (req, res) => {
     if (!req.user) {
       res.status(400).json({ error: "User not found" });
     } else {

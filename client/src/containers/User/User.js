@@ -1,18 +1,24 @@
 import React, { Component } from "react";
-import AddBookForm from "../../components/AddBookForm/AddBookForm";
+import { connect } from "react-redux";
+import UserInfoForm from "../../components/UserInfoForm/UserInfoForm";
 
 class User extends Component {
   render() {
+    const { userInfo } = this.props.auth;
     return (
-      <div>
-        <h2>USER</h2>
-        <div>User book list</div>
+      <div className="container">
+        <div>{userInfo === null ? "dude" : userInfo.name}'s book list</div>
+        <hr />
         <div>
-          <AddBookForm />
+          <UserInfoForm />
         </div>
       </div>
     );
   }
 }
 
-export default User;
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps, null)(User);
