@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { fetchBooks } from "../../actions/index";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import BookItem from "../../components/BookItem/BookItem";
 import Loading from "../../components/Loading/Loading";
 

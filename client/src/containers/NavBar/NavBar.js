@@ -12,7 +12,7 @@ class NavBar extends Component {
       case true:
         return [
           <li key="1">
-            <span>Welcome {userInfo.nickname}</span>
+            <span>Welcome {userInfo.name}</span>
           </li>,
           <li key="2">
             <NavLink to="/books">Books</NavLink>
