@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import styles from "./NavBar.css";
+import styles from "./NavBar.css";
 import { NavLink } from "react-router-dom";
 import { userLogout } from "../../actions/index";
 import { bindActionCreators } from "redux";
@@ -20,7 +20,7 @@ class NavBar extends Component {
           <li key="3">
             <NavLink to="/user">User</NavLink>
           </li>,
-          <li key="4">
+          <li key="4" className={styles.logout}>
             <span onClick={this.props.userLogout}>Logout</span>
           </li>
         ];
@@ -62,4 +62,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ userLogout }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NavBar);

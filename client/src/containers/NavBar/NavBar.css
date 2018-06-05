@@ -1,25 +1,2 @@
-.wrapper {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  background: gray;
-  flex-shrink: 0; }
-
-.container {
-  display: flex;
-  flex-flow: row nowrap;
-  width: 80%; }
-  .container a {
-    text-decoration: none;
-    margin: 1rem auto;
-    padding: 0 1rem;
-    color: white;
-    font-size: 1.2em; }
-  .container li {
-    list-style: none; }
-
-.navlinks {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly; }
+.logout {
+  cursor: pointer; }
