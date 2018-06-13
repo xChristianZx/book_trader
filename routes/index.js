@@ -21,7 +21,7 @@ module.exports = app => {
     const { sub } = req.user._json;
     // console.log(req.body);
     // console.log("USER:", req.user._json);
-    const { _id } = await findUser_id(sub);
+    const { _id } = await findUser_id(sub);   
     // console.log("user_id", _id);
     const newBook = {
       title,
