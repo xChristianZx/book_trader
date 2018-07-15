@@ -17,7 +17,7 @@ const strategy = new Auth0Strategy(
     // accessToken is the token to call Auth0 API (not needed in the most cases)
     // extraParams.id_token has the JSON Web Token profile has all the information
     // from the user
-    console.log("PROFILE", profile._json);
+    // console.log("passport.js, Profile:", profile._json);
     return done(null, profile);
   }
 );
