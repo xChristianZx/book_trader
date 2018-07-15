@@ -1,7 +1,7 @@
 {
   "name": "book_trader",
   "version": "1.0.0",
-  "description": "",
+  "description": "A book trading app",
   "engines": {
     "node": "9.5.0"
   },
@@ -22,12 +22,12 @@
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "mongoose": "^5.1.1",
-    "npm": "^6.1.0",
+    "mongoose": "^5.2.3",
+    "npm": "^6.2.0",
     "passport": "^0.4.0",
     "passport-auth0": "^0.6.1"
   },
   "devDependencies": {
-    "concurrently": "^3.5.1"
+    "concurrently": "^3.6.0"
   }
 }
