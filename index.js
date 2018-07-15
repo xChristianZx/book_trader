@@ -7,7 +7,10 @@ const app = express();
 
 // === Mongoose === //
 mongoose.Promise = global.Promise;
-mongoose.connect(keys.mongoURI);
+mongoose.connect(
+  keys.mongoURI,
+  { useNewUrlParser: true }
+);
 
 // === Express Middleware === //
 app.use(bodyParser.json());
